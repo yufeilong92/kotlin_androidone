@@ -94,3 +94,4 @@ public class ContentEditText extends android.support.v7.widget.AppCompatEditText
         outAttrs.imeOptions &= ~EditorInfo.IME_FLAG_NO_ENTER_ACTION;
         return conn;
     }
+}
