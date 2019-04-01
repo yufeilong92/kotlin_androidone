@@ -20,7 +20,7 @@ object PhoneUtil {
      * @param phone
      * @return
      */
-    fun phoneHineNumber(phone: String): String {
+    fun phoneHineNumbers(phone: String): String {
         val str = "****"
         val sb = StringBuilder(phone)
         sb.replace(3, 7, str)
