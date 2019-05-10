@@ -3,6 +3,7 @@ package com.backpacker.UtilsLibrary.java;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -222,4 +223,26 @@ public class TimeUtil {
         return sb.toString();
 
     }
+    /**
+     * 是否晚上十点到早上六点之间
+     * @param planDate
+     * @return
+     */
+    public static boolean isNight(Date planDate) {
+        //如果计划发布时间为空，就当发布时间为白天
+        if(null == planDate) {
+            return false;
+        }
+        //设置当前时间
+        Calendar date = Calendar.getInstance();
+        date.setTime(planDate);
+
+        //处于开始时间之后，和结束时间之前的判断
+        if (date.get(Calendar.HOUR_OF_DAY) >= 18|| date.get(Calendar.HOUR_OF_DAY) < 6) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
